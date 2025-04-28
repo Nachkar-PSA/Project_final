@@ -1,0 +1,64 @@
+@use '../abstracts/mixins';
+@use '../base/colors';
+@use '../abstracts/variables';
+@use '../base/typography';
+
+.experience{
+    background-color: colors.$main-regular;
+}
+.exp__nav {
+    overflow-x: auto;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    &-list {
+        @include mixins.flexbox();
+        padding: 30px;
+        margin: 0;
+        gap: 30px;
+    }
+    &-list-item {
+        white-space: nowrap;
+        color: colors.$gray-text;
+        font-weight: typography.$font-weight-bold;
+        font-size: typography.$font-size-30;
+        font-family: variables.$font-main;
+        cursor: pointer;
+        flex: 0 0 auto;
+        transition: background-color 0.3s ease;
+
+        &.active {
+            background: colors.$gradient-red-text;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+          }
+    }
+}
+
+.exp__separator{
+    height: 4px;
+    margin: 0 30px;
+    width: 84%;
+    background-color: colors.$line-separator;
+}
+.exp__title{
+    color: colors.$main-white;
+    font-weight: typography.$font-weight-bold;
+    font-size: typography.$font-size-20;
+    font-family: variables.$font-main;
+    padding: 0 30px;
+    margin: 30px 0;
+}
+.exp__text{
+    color: colors.$main-white;
+    font-weight: typography.$font-weight-regular;
+    font-size: typography.$font-size-19;
+    font-family: variables.$font-main;
+    line-height: typography.$line-height-30;
+    padding: 0 30px 30px;
+}

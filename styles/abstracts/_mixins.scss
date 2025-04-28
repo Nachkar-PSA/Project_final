@@ -1,0 +1,10 @@
+@mixin flexbox{
+    display: flex;
+}
+@mixin flex($jc: space-between, $ai: center, $fd: row, $g: 0px){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+    gap: $g;
+}

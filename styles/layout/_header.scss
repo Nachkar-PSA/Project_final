@@ -1,0 +1,227 @@
+@use '../abstracts/mixins';
+@use '../base/colors';
+@use '../abstracts/variables';
+@use '../base/typography';
+
+.header__wrapper {
+    @include mixins.flex($jc: space-between, $ai: center);
+    padding: 10px 15px;
+    background-color: colors.$main-regular;
+    opacity: 0.8;
+    overflow: hidden;
+
+}
+.light-theme .header__wrapper {
+    background-color: colors.$gray-bg;
+    opacity: 1;
+}
+.header__lang{
+    @include mixins.flexbox();
+    gap: 6px;
+}
+.header__lang-link{
+    padding: 7px 5px;
+    color: colors.$main-white;
+    font-weight: typography.$font-weight-bold;
+    font-size: typography.$font-size-12;
+    font-family: variables.$font-main;
+
+    &.active{
+        border-radius: 8px;
+        background-color: colors.$accent-color;
+    }
+
+    &:hover{
+        border-radius: 8px;
+        background-color: colors.$regular-active-hover;
+    }
+}
+.light-theme .header__lang-link {
+    color: colors.$gray-text;
+
+    &.active{
+        color: colors.$main-white;
+    }
+}
+.header__phone{
+    color: colors.$main-white;
+    font-weight: typography.$font-weight-bold;
+    font-size: typography.$font-size-16;
+    font-family: variables.$font-main;
+}
+.light-theme .header__phone {
+    color: colors.$gray-text;
+}
+.header__logo{
+    @include mixins.flex($jc: space-between, $ai: center);
+    background-color: colors.$main-regular;
+    padding: 0 15px;
+    z-index: 4;
+
+    &-wrapper{
+        @include mixins.flex($jc: space-between, $ai: center, $g: 4px);
+        padding: 15px 0 10px;
+    }
+
+    &-svg{
+        @include mixins.flex($ai: center, $fd: column, $g: 4px);
+    }
+
+    &-serv{
+        color: colors.$main-white;
+        font-weight: typography.$font-weight-regular;
+        font-size: typography.$font-size-20;
+        font-family: variables.$font-main;
+        z-index: 3;
+    }
+}
+.light-theme .header__logo {
+    background-color: colors.$main-white;
+
+    &-serv {
+        color: colors.$main-regular;
+    }
+}
+.light-theme .header__logo-svg--a path:not(:first-child),
+.light-theme .header__logo-svg--b path{
+    fill: colors.$main-regular;
+}
+.header__menu{
+    position: relative;
+    &::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: colors.$main-soft;
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    &-btn{
+        display: block;
+    }
+    &-list{
+        @include mixins.flex($ai: stretch, $fd: column, $g: 15px);
+        position: fixed;
+        bottom: 0;
+        left: 8px;
+        right: 8px;
+        width: auto;
+        background: colors.$main-white;
+        border-radius: 12px 12px 0 0;
+        padding: 64px 12px 12px 12px;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    &-item{
+        color: colors.$main-white;
+        font-weight: typography.$font-weight-bold;
+        font-size: typography.$font-size-16;
+        font-family: variables.$font-main;
+        background: colors.$gray-bg;
+        border-radius: 12px;
+        padding: 7px;
+        text-align: center;
+    }
+    &-item:hover{
+        background: colors.$grey-separator;
+    }
+    a {
+        display: block;
+        width: 100%;
+  
+        &:hover {
+          color: colors.$regular-active-hover;
+        }
+    }
+    &-close{
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: colors.$accent-color;
+        background: transparent;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    &--open {
+        .header__menu-list {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+    }
+    &--open::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+}
+.light-theme.header__menu-btn {
+    color: colors.$main-regular;
+}
+@media (min-width: 768px){
+    .header__logo{
+        @include mixins.flex($fd: column, $ai: flex-start, $g: 30px);
+        padding: 30px 60px 0;
+        &-svg--a,
+        &-svg--b{
+            width: typography.$logo-width-tablet;
+            height: auto;
+        }
+        &-svg--c,
+        &-serv{
+            display: none;
+        }
+    }
+    .header__wrapper{
+        padding: 50px 60px 0;
+        background: colors.$main-regular;
+        &::before{
+            display: none;
+        }
+    }
+    .header__menu {
+        position: static;
+        &::before {
+          display: none;
+        }
+        &-btn,
+        &-close {
+          display: none;
+        }
+        &-list {
+            @include mixins.flex($jc: flex-end, $ai: center, $fd: row, $g: 15px);
+            position: static;
+            visibility: visible;
+            opacity: 1;
+            transform: none;
+            pointer-events: auto;
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            height: auto;
+        }
+        &-item {
+            background: transparent;
+            padding: 0;
+      
+            &:hover {
+              background: transparent;
+              color: colors.$accent-color;
+            }
+        }
+        a{
+            color: colors.$main-white;
+        }
+    }
+    .header__wrapper {
+        @include mixins.flex($jc: space-between, $ai: center);
+      }
+}
+
+    

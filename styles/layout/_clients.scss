@@ -1,0 +1,28 @@
+@use '../abstracts/mixins';
+@use '../base/colors';
+@use '../abstracts/variables';
+@use '../base/typography';
+
+
+.clients{
+
+    &__title{
+    @include mixins.flexbox();
+    justify-content: center;
+    color: colors.$main-regular;
+    font-weight: typography.$font-weight-bold;
+    font-size: typography.$font-size-14;
+    font-family: variables.$font-main;
+    letter-spacing: typography.$letter-spacing-1;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    }
+
+    &__list{
+        @include mixins.flex($jc: center, $ai: center, $fd: column, $g: 0px);
+        
+    }
+}
+.hidden{
+    display: none;
+}

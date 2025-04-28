@@ -1,0 +1,61 @@
+@use '../abstracts/mixins';
+@use '../base/colors';
+@use '../abstracts/variables';
+@use '../base/typography';
+
+.hero{
+    @include mixins.flex($jc: space-between, $ai: center, $fd: column);
+    background-color: colors.$main-regular;
+    position: relative;
+    min-height: 500px;
+
+    &__title{
+        font-weight: typography.$font-weight-bold;
+        font-size: typography.$font-size-38;
+        color: colors.$main-white;
+        font-family: variables.$font-main;
+        max-width: 315px;
+        text-align: center;
+        z-index: 2;
+        margin-top: 129px;
+    }
+
+    &__btn{
+        padding-bottom: 30px;
+        z-index: 2;
+    }
+
+    &__svg-letter{
+        position: absolute;
+        top: -105px;
+        left: -35px;
+        z-index: 2;
+        pointer-events: none;
+        min-width: 375px;
+        
+        .part{
+            position: absolute;
+            opacity: 0.7;
+        }
+        
+        .part--1{
+            top: 0;
+            left: 0;
+            width: 267px;
+        }
+        
+        .part--2{
+            top: 258px;
+            left: 111px;
+        }
+        // <img src="./image/home-symbol.svg" <="" div="" 
+        // style="
+        // z-index: 0;
+        // position: absolute;
+        // top: -43px;
+        // left: -70px;
+        // width: 670px;
+        // height: 799px;
+        // ">
+    }
+}

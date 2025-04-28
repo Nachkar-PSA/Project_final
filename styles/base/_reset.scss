@@ -1,0 +1,89 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+/* 2. Remove list styles */
+ul,
+ol {
+    list-style: none;
+    text-decoration: none;
+}
+
+/* 3, Remove default button styles */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 4. Set default font inheritance */
+body,
+input,
+button,
+textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    color: inherit;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+/* 9. Create a root stacking context */
+#root,
+#__next {
+    isolation: isolate;
+}
