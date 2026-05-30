@@ -89,6 +89,11 @@ a {
   isolation: isolate;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .header__wrapper {
   display: flex;
   justify-content: space-between;
@@ -98,7 +103,6 @@ a {
   padding: 10px 15px;
   background-color: #323264;
   opacity: 0.8;
-  overflow: hidden;
 }
 
 .light-theme .header__wrapper {
@@ -273,6 +277,9 @@ a {
 }
 
 @media (min-width: 768px) {
+  .header__wrapper {
+    opacity: 1;
+  }
   .header__logo {
     display: flex;
     justify-content: space-between;
@@ -323,6 +330,7 @@ a {
   .header__menu-item {
     background: transparent;
     padding: 0;
+    z-index: 3;
   }
   .header__menu-item:hover {
     background: transparent;
@@ -377,6 +385,21 @@ a {
   display: block;
 }
 
+@media (min-width: 768px) {
+  .hero {
+    min-height: 100vh;
+  }
+  .hero__title {
+    font-size: 38px;
+    max-width: 800px;
+    margin-top: 269px;
+  }
+  .hero__svg-letter {
+    top: -234px;
+    left: -62px;
+    width: 119%;
+  }
+}
 .experience {
   background-color: #323264;
 }
@@ -437,6 +460,21 @@ a {
   padding: 0 30px 30px;
 }
 
+@media (min-width: 768px) {
+  .exp__nav-list {
+    padding: 30px 60px;
+  }
+  .exp__separator {
+    margin: 0 60px;
+  }
+  .exp__title {
+    font-size: 26px;
+    padding: 0 60px;
+  }
+  .exp__text {
+    padding: 0 60px 60px;
+  }
+}
 .services {
   padding: 0 30px 60px 30px;
   border-bottom-right-radius: 14px;
@@ -535,6 +573,15 @@ a {
   width: 100%;
 }
 
+@media (min-width: 768px) {
+  .services {
+    padding: 0 60px 60px;
+  }
+  .serv__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
 .team {
   padding: 0 30px;
   background: #fff;
@@ -659,6 +706,17 @@ a {
   height: 60px;
 }
 
+@media (min-width: 768px) {
+  .team {
+    padding: 0 60px;
+  }
+  .team__desc {
+    padding: 60px;
+  }
+  .team__desc-text {
+    font-size: 40px;
+  }
+}
 .clients__title {
   display: flex;
   justify-content: center;
@@ -677,9 +735,35 @@ a {
   flex-direction: column;
   gap: 0px;
 }
-
-.hidden {
-  display: none;
+@media (min-width: 768px) {
+  .clients__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .clients__item.hidden {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .clients__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0px;
+  }
+  .clients__item.hidden {
+    display: flex;
+  }
+}
+.clients__logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .publications {

@@ -1,12 +1,10 @@
-@use '../abstracts/mixins';
-@use '../base/colors';
-@use '../abstracts/variables';
-@use '../base/typography';
+@use "../abstracts/mixins";
+@use "../base/colors";
+@use "../abstracts/variables";
+@use "../base/typography";
 
-
-.clients{
-
-    &__title{
+.clients {
+  &__title {
     @include mixins.flexbox();
     justify-content: center;
     color: colors.$main-regular;
@@ -16,13 +14,38 @@
     letter-spacing: typography.$letter-spacing-1;
     text-transform: uppercase;
     margin-bottom: 30px;
+  }
+
+  &__list {
+    @include mixins.flex($jc: center, $ai: center, $fd: column, $g: 0px);
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, auto);
+      gap: 0px;
+    }
+  }
+
+  &__item {
+    &.hidden {
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
 
-    &__list{
-        @include mixins.flex($jc: center, $ai: center, $fd: column, $g: 0px);
-        
+    @media (min-width: 768px) {
+      @include mixins.flex($jc: center, $ai: center);
+
+      &.hidden {
+        @include mixins.flexbox;
+      }
     }
-}
-.hidden{
-    display: none;
+  }
+
+  &__logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }

@@ -8,7 +8,7 @@
   padding: 10px 15px;
   background-color: colors.$main-regular;
   opacity: 0.8;
-  overflow: hidden;
+  // overflow: hidden;
 }
 .light-theme .header__wrapper {
   background-color: colors.$gray-bg;
@@ -167,6 +167,9 @@
   color: colors.$main-regular;
 }
 @media (min-width: 768px) {
+  .header__wrapper {
+    opacity: 1;
+  }
   .header__logo {
     @include mixins.flex($fd: column, $ai: flex-start, $g: 30px);
     padding: 30px 60px 0;
@@ -211,6 +214,7 @@
     &-item {
       background: transparent;
       padding: 0;
+      z-index: 3;
 
       &:hover {
         background: transparent;
