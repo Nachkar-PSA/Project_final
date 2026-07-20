@@ -714,7 +714,7 @@ body {
     padding: 60px;
   }
   .team__desc-text {
-    font-size: 40px;
+    font-size: 38px;
   }
 }
 .clients__title {
@@ -739,9 +739,12 @@ body {
   .clients__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(4, 120px);
     gap: 0px;
   }
+}
+.clients__item {
+  height: 120px;
 }
 @media (max-width: 767px) {
   .clients__item.hidden {
@@ -753,16 +756,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    gap: 0px;
   }
   .clients__item.hidden {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .clients__logo {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 
