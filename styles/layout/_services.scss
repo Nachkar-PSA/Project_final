@@ -42,9 +42,12 @@
 }
 
 .serv__text {
+  margin: 0;
+  text-wrap: wrap;
   font-weight: typography.$font-weight-bold;
   font-size: typography.$font-size-30;
   font-family: variables.$font-main;
+  line-height: typography.$line-height-37;
   background: colors.$gradient-red-text;
   -webkit-background-clip: text;
   background-clip: text;
@@ -107,6 +110,10 @@
 @media (min-width: 768px) {
   .services {
     padding: 0 60px 60px;
+  }
+  .serv__text {
+    font-size: typography.$font-size-38;
+    line-height: typography.$line-height-46;
   }
   .serv__list {
     grid-template-columns: repeat(2, 1fr);

@@ -1,87 +1,129 @@
-@use '../abstracts/mixins';
-@use '../base/colors';
-@use '../abstracts/variables';
-@use '../base/typography';
+@use "../abstracts/mixins";
+@use "../base/colors";
+@use "../abstracts/variables";
+@use "../base/typography";
 
+.publications {
+  padding: 30px 30px 0 30px;
+  background: colors.$gray-bg;
 
-.publications{
-    padding: 30px 30px 0 30px;
-    background: colors.$gray-bg;
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: colors.$regular-active;
+    font-weight: typography.$font-weight-bold;
+    font-size: typography.$font-size-14;
+    line-height: typography.$line-height-17;
+    font-family: variables.$font-main;
+    letter-spacing: typography.$letter-spacing-1;
+    text-transform: uppercase;
 
-    &__link{
-        display: inline-flex;
-        align-items: center;
-        gap: 2px;
-        color: colors.$regular-active;
-        font-weight: typography.$font-weight-bold;
-        font-size: typography.$font-size-14;
-        font-family: variables.$font-main;
-        letter-spacing: typography.$letter-spacing-1;
-        text-transform: uppercase;
+    &:hover {
+      color: colors.$regular-active-hover;
 
-        &:hover{
-            color: colors.$regular-active-hover;
+      path {
+        stroke: colors.$regular-active-hover;
+      }
 
-            path {
-                stroke: colors.$regular-active-hover;
-            }
-
-            svg {
-                transform: translateX(2px);
-                transition: transform 0.2s;
-            }
-        }
+      svg {
+        transform: translateX(2px);
+        transition: transform 0.2s;
+      }
     }
-    &__text{
-        font-weight: typography.$font-weight-bold;
-        font-size: typography.$font-size-30;
-        font-family: variables.$font-main;
-        background: colors.$gradient-red-text;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-top: 5px;
-    }
+  }
+  &__text {
+    font-weight: typography.$font-weight-bold;
+    font-size: typography.$font-size-30;
+    line-height: typography.$line-height-37;
+    font-family: variables.$font-main;
+    background: colors.$gradient-red-text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 5px;
+  }
 }
-.pub__list{
-    @include mixins.flexbox();
-    flex-direction: column;
-    gap: 30px;
-    margin-top: 30px;
+.pub__list {
+  @include mixins.flexbox();
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
 
-    &-item{
-        @include mixins.flex($jc: flex-start, $ai: flex-start, $fd: column);
-    }
-    &-link{
-        font-weight: typography.$font-weight-bold;
-        font-size: typography.$font-size-16;
-        font-family: variables.$font-main;
-        color: colors.$regular-active;
-    }
-    &-date{
-        color: colors.$gray-text;
-        font-weight: typography.$font-weight-bold;
-        font-size: typography.$font-size-12;
-        font-family: variables.$font-main;
-        letter-spacing: typography.$letter-spacing-1;
-        text-transform: uppercase;
-    }
-    &-separator{
-        width: 100%;
-        height: 4px;
-        background: colors.$gray-bg;
-    }
-    &-text{
-        color: colors.$main-black;
-        font-weight: typography.$font-weight-regular;
-        font-size: typography.$font-size-14;
-        font-family: variables.$font-main;
-        line-height: typography.$line-height-22;
-    }
-    &-wrapper{
-        padding: 30px;
-        @include mixins.flex($jc: flex-start, $ai: flex-start, $fd: column, $g: 15px);
-        background: colors.$main-white;
+  &-item {
+    @include mixins.flex($jc: flex-start, $ai: flex-start, $fd: column);
+  }
+  &-link {
+    font-weight: typography.$font-weight-bold;
+    font-size: typography.$font-size-16;
+    line-height: typography.$line-height-20;
+    font-family: variables.$font-main;
+    color: colors.$regular-active;
+  }
+  &-date {
+    color: colors.$gray-text;
+    font-weight: typography.$font-weight-bold;
+    font-size: typography.$font-size-12;
+    line-height: typography.$line-height-15;
+    font-family: variables.$font-main;
+    letter-spacing: typography.$letter-spacing-1;
+    text-transform: uppercase;
+  }
+  &-separator {
+    width: 100%;
+    height: 4px;
+    background: colors.$gray-bg;
+  }
+  &-text {
+    color: colors.$main-black;
+    font-weight: typography.$font-weight-regular;
+    font-size: typography.$font-size-14;
+    font-family: variables.$font-main;
+    line-height: typography.$line-height-22;
+  }
+  &-wrapper {
+    padding: 30px;
+    @include mixins.flex(
+      $jc: flex-start,
+      $ai: flex-start,
+      $fd: column,
+      $g: 15px
+    );
+    background: colors.$main-white;
+  }
+}
+@media (min-width: 768px) {
+  .publications {
+    padding: 30px 60px 0;
+  }
 
+  .publications__text {
+    font-size: typography.$font-size-38;
+    line-height: typography.$line-height-46;
+  }
+  .pub__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    &-item {
+      background: colors.$main-white;
+      border-radius: typography.$border-radius-8;
+      overflow: hidden;
     }
+
+    &-item:last-child {
+      grid-column: 1 / -1;
+    }
+
+    &-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    &-wrapper {
+      align-self: stretch;
+      flex-grow: 1;
+    }
+  }
 }

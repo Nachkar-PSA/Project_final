@@ -43,10 +43,9 @@
 
 @media (min-width: 768px) {
   .hero {
-    min-height: 100vh;
+    min-height: 790px;
 
     &__title {
-      font-size: 38px;
       max-width: 800px;
       margin-top: 269px;
     }
@@ -54,7 +53,7 @@
     &__svg-letter {
       top: -234px;
       left: -62px;
-      width: 119%;
+      width: 893.28px;
     }
   }
 }
