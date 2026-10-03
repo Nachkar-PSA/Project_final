@@ -20,10 +20,10 @@
     text-transform: uppercase;
 
     &:hover {
-      color: colors.$regular-active-hover;
+      color: colors.$accent-color;
 
       path {
-        stroke: colors.$regular-active-hover;
+        stroke: colors.$accent-color;
       }
 
       svg {
@@ -124,6 +124,15 @@
     &-wrapper {
       align-self: stretch;
       flex-grow: 1;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .pub__list {
+    @include mixins.grid($columns: repeat(3, minmax(0, 1fr)), $gap: 30px);
+
+    &-item:last-child {
+      grid-column: auto;
     }
   }
 }

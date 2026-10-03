@@ -20,14 +20,15 @@
   color: colors.$regular-active;
   font-weight: typography.$font-weight-bold;
   font-size: typography.$font-size-14;
+  line-height: typography.$line-height-17;
   font-family: variables.$font-main;
   text-transform: uppercase;
 
   &:hover {
-    color: colors.$regular-active-hover;
+    color: colors.$accent-color;
 
     path {
-      stroke: colors.$regular-active-hover;
+      stroke: colors.$accent-color;
     }
 
     svg {
@@ -62,19 +63,23 @@
 }
 
 .serv__list {
-  display: grid;
-  gap: 40px;
+  @include mixins.grid($gap: 40px);
   padding-top: 30px;
 
   &-card-title {
     font-weight: typography.$font-weight-bold;
     font-size: typography.$font-size-22;
+    line-height: typography.$line-height-27;
     font-family: variables.$font-main;
     color: colors.$regular-active;
     margin: 30px 0 15px;
 
     a {
       color: inherit;
+
+      &:hover {
+        color: colors.$accent-color;
+      }
     }
   }
 
@@ -82,8 +87,8 @@
     font-weight: typography.$font-weight-regular;
     font-size: typography.$font-size-16;
     font-family: variables.$font-main;
-    color: colors.$main-white;
     line-height: typography.$line-height-26;
+    color: colors.$main-white;
   }
 }
 .serv__bg1 {
@@ -116,7 +121,20 @@
     line-height: typography.$line-height-46;
   }
   .serv__list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    @include mixins.grid($columns: repeat(2, minmax(0, 1fr)), $gap: 60px);
+  }
+  .serv__spacer {
+    height: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .serv__list {
+    @include mixins.grid($columns: repeat(3, minmax(0, 1fr)), $gap: 60px);
+  }
+}
+
+@media (min-width: 1920px) {
+  .services {
+    padding-inline: 160px;
   }
 }

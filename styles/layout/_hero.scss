@@ -57,3 +57,19 @@
     }
   }
 }
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 652px;
+
+    &__title {
+      margin-top: 250px;
+    }
+
+    &__svg-letter {
+      top: -116px;
+      width: 670px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

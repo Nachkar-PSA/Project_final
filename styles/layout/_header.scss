@@ -16,7 +16,7 @@
 }
 .header__lang {
   @include mixins.flexbox();
-  gap: 6px;
+  gap: 0;
 }
 .header__lang-link {
   padding: 5px 7px;
@@ -265,14 +265,22 @@
 }
 
 @media (min-width: 1024px) {
+  .header {
+    position: relative;
+  }
   .header__wrapper {
     justify-content: flex-end;
-    padding: 60px 160px 0;
-    gap: 6px;
   }
   .header__logo {
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-end;
+    padding: 18px 60px 0;
+
+    &-wrapper {
+      position: absolute;
+      top: 50px;
+      left: 60px;
+      padding: 0;
+    }
   }
 }

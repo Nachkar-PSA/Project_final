@@ -29,7 +29,9 @@
     line-height: typography.$line-height-37;
     cursor: pointer;
     flex: 0 0 auto;
-    transition: background-color 0.3s ease;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
 
     &.active {
       background: colors.$gradient-red-text;
@@ -37,6 +39,13 @@
       -webkit-background-clip: text;
       color: transparent;
       -webkit-text-fill-color: transparent;
+    }
+
+    &:hover {
+      background: none;
+      color: colors.$accent-color;
+      transform: translateX(2px);
+      -webkit-text-fill-color: colors.$accent-color;
     }
   }
 }
@@ -51,6 +60,7 @@
   color: colors.$main-white;
   font-weight: typography.$font-weight-bold;
   font-size: typography.$font-size-20;
+  line-height: typography.$line-height-24;
   font-family: variables.$font-main;
   padding: 0 30px;
   margin: 30px 0;
@@ -68,8 +78,8 @@
   .exp__nav-list {
     padding: 60px;
     &-item {
-      line-height: typography.$line-height-37;
       font-size: typography.$font-size-38;
+      line-height: typography.$line-height-46;
     }
   }
   .exp__separator {
@@ -77,9 +87,74 @@
   }
   .exp__title {
     font-size: typography.$font-size-30;
+    line-height: typography.$line-height-37;
     padding: 0 60px;
   }
   .exp__text {
     padding: 0 60px 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .experience {
+    @include mixins.grid(
+      $columns: max-content 4px minmax(0, 1fr),
+      $gap: 30px 60px
+    );
+    padding: 60px;
+  }
+  .exp__nav {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: center;
+    width: auto;
+    overflow: visible;
+
+    &-list {
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 0;
+
+      &-item:last-child {
+        display: none;
+      }
+    }
+  }
+  .exp__separator {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    width: 4px;
+    height: auto;
+    margin: 0;
+  }
+
+  .exp__title {
+    grid-column: 3;
+    grid-row: 1;
+    padding: 0;
+    margin: 0;
+    text-wrap: wrap;
+  }
+  .exp__text {
+    grid-column: 3;
+    grid-row: 2;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .experience {
+    padding-inline: 180px;
+  }
+  .exp__nav-list {
+    &-item:last-child {
+      display: list-item;
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .experience {
+    padding-inline: 280px;
   }
 }
