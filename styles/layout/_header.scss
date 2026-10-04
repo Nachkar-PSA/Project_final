@@ -212,10 +212,10 @@
       width: typography.$logo-width-tablet;
       height: auto;
     }
-    &-svg--c,
-    &-serv {
-      display: none;
-    }
+    // &-svg--c,
+    // &-serv {
+    //   display: none;
+    // }
   }
   .header__wrapper {
     padding: 50px 60px 0;
@@ -257,6 +257,12 @@
     }
     a {
       color: colors.$main-white;
+    }
+    a.active {
+      color: colors.$accent-color;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
     }
   }
   .header__wrapper {

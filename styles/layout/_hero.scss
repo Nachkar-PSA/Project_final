@@ -23,6 +23,17 @@
   &__btn {
     padding-bottom: 30px;
     z-index: 2;
+    svg path,
+    svg circle {
+      transition: stroke 0.2s ease;
+    }
+
+    &:hover {
+      svg path,
+      svg circle {
+        stroke: colors.$accent-color;
+      }
+    }
   }
 
   &__svg-letter {
