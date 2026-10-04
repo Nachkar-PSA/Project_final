@@ -15,3 +15,17 @@ document.addEventListener("click", (e) => {
     menuWrapper.classList.remove("header__menu--open");
   }
 });
+
+const consultationBtn = document.querySelector(".service__entry-btn");
+const contactPopup = document.querySelector("#contact-popup");
+const contactCloseBtn = document.querySelector(".contact__popup-close");
+
+if (consultationBtn && contactPopup && contactCloseBtn) {
+  consultationBtn.addEventListener("click", () => {
+    contactPopup.showModal();
+  });
+
+  contactCloseBtn.addEventListener("click", () => {
+    contactPopup.close();
+  });
+}

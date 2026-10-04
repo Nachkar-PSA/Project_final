@@ -55,8 +55,13 @@
   font-size: typography.$font-size-16;
   font-family: variables.$font-main;
 }
-.light-theme .header__phone {
+.light-theme .header__phone,
+.light-theme .header__facebook {
   color: colors.$gray-text;
+}
+
+.light-theme .header__facebook:hover {
+  color: colors.$accent-color;
 }
 .header__logo {
   @include mixins.flex($jc: space-between, $ai: center);
@@ -173,6 +178,15 @@
 .light-theme .header__menu-btn svg path {
   stroke: colors.$main-regular;
 }
+
+.light-theme .header__menu .menu-link {
+  color: colors.$regular-active;
+
+  &:hover,
+  &.active {
+    color: colors.$accent-color;
+  }
+}
 .header__facebook {
   display: none;
   color: colors.$main-white;
@@ -182,6 +196,9 @@
   }
 }
 @media (min-width: 768px) {
+  .light-theme .header__wrapper {
+    background-color: colors.$main-white;
+  }
   .header__address,
   .header__phone,
   .header__facebook {

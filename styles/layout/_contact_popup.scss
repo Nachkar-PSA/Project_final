@@ -1,0 +1,136 @@
+@use "../abstracts/mixins";
+@use "../base/colors";
+@use "../abstracts/variables";
+@use "../base/typography";
+
+.contact__popup {
+  background: colors.$gray-bg;
+  padding: 30px;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  overflow-y: auto;
+  font-family: variables.$font-main;
+  position: fixed;
+  inset: 0;
+
+  &::backdrop {
+    background: rgba(colors.$main-regular, 0.7);
+  }
+
+  &-form {
+    @include mixins.flex($jc: flex-start, $ai: stretch, $fd: column, $g: 30px);
+  }
+
+  &-header {
+    @include mixins.flex($jc: space-between, $ai: flex-start, $g: 10px);
+  }
+
+  &-title {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    font-size: typography.$font-size-30;
+    font-weight: typography.$font-weight-bold;
+    line-height: typography.$line-height-37;
+    text-wrap: wrap;
+    background: colors.$gradient-red-text;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-close {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &-group {
+    @include mixins.flex($jc: flex-start, $ai: stretch, $fd: column, $g: 15px);
+  }
+
+  &-input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid colors.$main-white;
+    border-radius: typography.$border-radius-8;
+    background: colors.$main-white;
+    color: colors.$main-black;
+    font-family: inherit;
+    font-size: typography.$font-size-16;
+    line-height: typography.$line-height-26;
+
+    &::placeholder {
+      color: colors.$gray-text;
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      outline: 2px solid colors.$regular-active;
+    }
+  }
+
+  &-message {
+    height: 130px;
+    resize: vertical;
+  }
+
+  &-subtitle {
+    margin: 0;
+    color: colors.$gray-text;
+    font-size: typography.$font-size-14;
+    line-height: typography.$line-height-17;
+    font-weight: typography.$font-weight-bold;
+    letter-spacing: typography.$letter-spacing-1;
+    text-transform: uppercase;
+  }
+
+  &-submit {
+    width: 100%;
+    padding: 18px 30px;
+    border: 0;
+    border-radius: typography.$border-radius-12;
+    box-shadow: 0 0 20px rgba(colors.$regular-active, 0.5);
+    background: colors.$regular-active;
+    color: colors.$main-white;
+    font-family: inherit;
+    font-size: typography.$font-size-16;
+    font-weight: typography.$font-weight-bold;
+    line-height: typography.$line-height-20;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact__popup {
+    width: 650px;
+    height: fit-content;
+    max-height: calc(100dvh - 60px);
+    margin: auto;
+    border-radius: typography.$border-radius-12;
+    box-shadow: 0 15px 80px rgba(colors.$main-regular, 0.7);
+
+    &-title {
+      font-size: typography.$font-size-38;
+      line-height: typography.$line-height-46;
+      font-weight: typography.$font-weight-bold;
+    }
+  }
+}
+
+html:has(.contact__popup[open]),
+body:has(.contact__popup[open]) {
+  overflow: hidden;
+}

@@ -267,6 +267,43 @@
         </div>
         <div class="footer__rights">© 2021 HLEGAL Law company, LLC</div>
     </footer>
+
+    <dialog class="contact__popup" id="contact-popup" aria-labelledby="contact-title">
+        <form class="contact__popup-form">
+            <div class="contact__popup-header">
+                <h2 class="contact__popup-title" id="contact-title">
+                    We would like to help you
+                </h2>
+                <button class="contact__popup-close" type="button" aria-label="Close contact form">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M7 7L25 25" stroke="#EC6F5D" stroke-width="2" />
+                        <path d="M25 7L7 25" stroke="#EC6F5D" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="contact__popup-group">
+                <input type="text" class="contact__popup-input" name="name" placeholder="Name" aria-label="Name"
+                    autocomplete="name" required>
+                <textarea class="contact__popup-input contact__popup-message" name="message" placeholder="Message"
+                    aria-label="Message" required></textarea>
+            </div>
+
+            <div class="contact__popup-group">
+                <h3 class="contact__popup-subtitle">
+                    How to answer you?
+                </h3>
+                <input type="tel" class="contact__popup-input" name="phone" placeholder="Phone number"
+                    aria-label="Phone number" autocomplete="tel" required>
+                <input type="email" class="contact__popup-input" name="email" placeholder="Email" aria-label="Email"
+                    autocomplete="email" required>
+            </div>
+            <button class="contact__popup-submit" type="button">
+                Send message
+            </button>
+        </form>
+    </dialog>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
