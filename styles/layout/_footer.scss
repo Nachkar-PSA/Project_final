@@ -8,7 +8,7 @@
   background: colors.$gray-bg;
 
   &__separator {
-    background: colors.$grey-separator;
+    background: colors.$gray-separator;
     width: 100%;
     height: 2px;
   }
@@ -95,6 +95,16 @@
         border-radius: 50%;
         background: colors.$gray-text;
       }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .footer {
+    padding-inline: 160px;
+
+    &__rights {
+      right: 160px;
     }
   }
 }
