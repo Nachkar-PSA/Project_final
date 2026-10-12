@@ -218,6 +218,13 @@ body {
 }
 .header__menu-btn {
   display: block;
+  border-radius: 8px;
+}
+.header__menu-btn:active {
+  background: #e6e6f0;
+}
+.header__menu-btn:active svg path {
+  stroke: #323264;
 }
 .header__menu-list {
   display: flex;
@@ -249,7 +256,7 @@ body {
   padding: 7px;
   text-align: center;
 }
-.header__menu-item:hover {
+.header__menu-item:hover, .header__menu .header__menu-item:active {
   background: #e6e6f0;
 }
 .header__menu a {
@@ -258,7 +265,7 @@ body {
   color: #24a3ff;
 }
 .header__menu a:hover {
-  color: #0085ff;
+  color: #f0145a;
 }
 .header__menu-close-item {
   position: absolute;
@@ -289,7 +296,7 @@ body {
 .light-theme .header__menu .menu-link {
   color: #24a3ff;
 }
-.light-theme .header__menu .menu-link:hover, .light-theme .header__menu .menu-link.active {
+.light-theme .header__menu .menu-link.active {
   color: #f0145a;
 }
 
@@ -387,6 +394,11 @@ body {
   }
   .header__menu a {
     color: #fff;
+  }
+  .header__menu a:hover:not(.active) {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
   }
   .header__menu a.active {
     color: #f0145a;
@@ -1271,6 +1283,16 @@ body {
   color: #24a3ff;
   font-weight: 700;
   font-size: 16px;
+}
+.footer__facebook {
+  display: block;
+  color: #24a3ff;
+}
+.footer__email, .footer__facebook {
+  transition: color 0.3s ease;
+}
+.footer__email:hover, .footer__facebook:hover {
+  color: #f0145a;
 }
 .footer__rights {
   display: flex;

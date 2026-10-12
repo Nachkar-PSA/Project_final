@@ -107,6 +107,15 @@
   }
   &-btn {
     display: block;
+    border-radius: typography.$border-radius-8;
+
+    &:active {
+      background: colors.$gray-separator;
+
+      svg path {
+        stroke: colors.$main-regular;
+      }
+    }
   }
   &-list {
     @include mixins.flex($ai: stretch, $fd: column, $g: 15px);
@@ -136,7 +145,8 @@
     padding: 7px;
     text-align: center;
   }
-  &-item:hover {
+  &-item:hover,
+  .header__menu &-item:active {
     background: colors.$gray-separator;
   }
   a {
@@ -145,7 +155,7 @@
     color: colors.$regular-active;
 
     &:hover {
-      color: colors.$regular-active-hover;
+      color: colors.$accent-color;
     }
   }
 
@@ -181,7 +191,6 @@
 .light-theme .header__menu .menu-link {
   color: colors.$regular-active;
 
-  &:hover,
   &.active {
     color: colors.$accent-color;
   }
@@ -273,6 +282,12 @@
     }
     a {
       color: colors.$main-white;
+
+      &:hover:not(.active) {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 5px;
+      }
     }
     a.active {
       color: colors.$accent-color;
