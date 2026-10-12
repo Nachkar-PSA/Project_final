@@ -256,7 +256,7 @@ body {
   padding: 7px;
   text-align: center;
 }
-.header__menu-item:hover, .header__menu .header__menu-item:active {
+.header__menu-item:hover, .header__menu-item:active {
   background: #e6e6f0;
 }
 .header__menu a {
@@ -264,7 +264,7 @@ body {
   width: 100%;
   color: #24a3ff;
 }
-.header__menu a:hover {
+.header__menu a.active {
   color: #f0145a;
 }
 .header__menu-close-item {

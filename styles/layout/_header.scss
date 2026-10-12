@@ -146,7 +146,7 @@
     text-align: center;
   }
   &-item:hover,
-  .header__menu &-item:active {
+  &-item:active {
     background: colors.$gray-separator;
   }
   a {
@@ -154,7 +154,7 @@
     width: 100%;
     color: colors.$regular-active;
 
-    &:hover {
+    &.active {
       color: colors.$accent-color;
     }
   }
