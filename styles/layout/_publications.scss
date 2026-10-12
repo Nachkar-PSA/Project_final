@@ -33,7 +33,6 @@
       padding: 8px 30px 10px;
       border-radius: typography.$border-radius-10;
       color: colors.$main-regular;
-      font-family: variables.$font-main;
       font-size: typography.$font-size-16;
       font-weight: typography.$font-weight-bold;
       line-height: typography.$line-height-20;
@@ -61,7 +60,6 @@
     font-weight: typography.$font-weight-bold;
     font-size: typography.$font-size-14;
     line-height: typography.$line-height-17;
-    font-family: variables.$font-main;
     letter-spacing: typography.$letter-spacing-1;
     text-transform: uppercase;
 
@@ -82,7 +80,6 @@
     font-weight: typography.$font-weight-bold;
     font-size: typography.$font-size-30;
     line-height: typography.$line-height-37;
-    font-family: variables.$font-main;
     background: colors.$gradient-red-text;
     -webkit-background-clip: text;
     background-clip: text;
@@ -91,19 +88,9 @@
   }
 
   &-btn {
+    @include mixins.button-primary;
     display: block;
     margin: 30px auto 0;
-    padding: 18px 30px;
-    border: 0;
-    border-radius: typography.$border-radius-12;
-    background: colors.$regular-active;
-    box-shadow: 0 0 20px rgba(colors.$regular-active, 0.5);
-    color: colors.$main-white;
-    font-family: inherit;
-    font-size: typography.$font-size-16;
-    font-weight: typography.$font-weight-bold;
-    line-height: typography.$line-height-20;
-    cursor: pointer;
   }
 }
 .pub__list {
@@ -129,7 +116,6 @@
     font-weight: typography.$font-weight-bold;
     font-size: typography.$font-size-16;
     line-height: typography.$line-height-20;
-    font-family: variables.$font-main;
     color: colors.$regular-active;
   }
   &-date {
@@ -137,7 +123,6 @@
     font-weight: typography.$font-weight-bold;
     font-size: typography.$font-size-12;
     line-height: typography.$line-height-15;
-    font-family: variables.$font-main;
     letter-spacing: typography.$letter-spacing-1;
     text-transform: uppercase;
   }
@@ -150,7 +135,6 @@
     color: colors.$main-black;
     font-weight: typography.$font-weight-regular;
     font-size: typography.$font-size-14;
-    font-family: variables.$font-main;
     line-height: typography.$line-height-22;
   }
   &-wrapper {

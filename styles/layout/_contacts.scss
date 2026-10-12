@@ -1,0 +1,134 @@
+@use "../base/colors";
+@use "../base/typography";
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.contacts {
+  padding: 0 30px;
+
+  &__spacer {
+    height: 30px;
+  }
+
+  &__info {
+    margin-bottom: 30px;
+    font-style: normal;
+    font-size: typography.$font-size-21;
+    line-height: typography.$line-height-30;
+  }
+
+  &__address {
+    margin: 0;
+    padding-bottom: 30px;
+    border-bottom: 4px solid colors.$gray-separator;
+    color: colors.$main-regular;
+  }
+
+  &__links {
+    @include mixins.flex(
+      $jc: flex-start,
+      $ai: flex-start,
+      $fd: column,
+      $g: 15px
+    );
+
+    padding-block: 30px;
+    border-bottom: 4px solid colors.$gray-separator;
+  }
+
+  &__phone {
+    color: colors.$main-alt;
+  }
+
+  &__email {
+    color: colors.$regular-active;
+  }
+
+  &__phone,
+  &__email {
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: colors.$accent-color;
+    }
+  }
+
+  &__facebook {
+    @include mixins.flex($jc: flex-start, $ai: center, $g: 10px);
+    width: fit-content;
+    margin-top: 30px;
+    color: colors.$regular-active;
+    font-size: typography.$font-size-12;
+    font-weight: typography.$font-weight-bold;
+    line-height: typography.$line-height-16;
+    letter-spacing: typography.$letter-spacing-1;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      color: colors.$accent-color;
+    }
+  }
+
+  &__form {
+    padding: 30px;
+    background: colors.$gray-bg;
+    border-radius: typography.$border-radius-12;
+
+    .contact__popup-title {
+      flex: initial;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .contacts {
+    padding-inline: 60px;
+
+    &__spacer {
+      height: 60px;
+    }
+
+    &__info {
+      margin-bottom: 60px;
+    }
+
+    &__form {
+      .contact__popup-title {
+        font-size: typography.$font-size-30;
+        line-height: typography.$line-height-37;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .contacts {
+    @include mixins.grid($columns: repeat(2, minmax(0, 1fr)), $gap: 60px);
+    align-items: start;
+
+    &__info {
+      margin-bottom: 0;
+    }
+
+    &__form {
+      min-width: 0;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .contacts {
+    padding-inline: 180px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .contacts {
+    padding-inline: 280px;
+  }
+}

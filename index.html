@@ -17,7 +17,7 @@
         <a class="header__lang-link active" href="#">EN</a>
       </div>
       <span class="header__address">Kyiv, Mechnikova str., 14/1</span>
-      <a class="header__phone" href="tel:+0800 211 927">0800 211 927</a>
+      <a class="header__phone" href="tel:0800211927">0800 211 927</a>
       <a class="header__facebook" href="#" aria-label="Facebook">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <path fill="currentColor"
@@ -77,28 +77,25 @@
               fill="white" />
           </svg>
         </div>
-        <!-- <svg class="header__logo-svg--c" xmlns="http://www.w3.org/2000/svg" width="12" height="26" viewBox="0 0 12 26"
-          fill="none">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.72827 0H11.9505L3.55574 26H0.333496L8.72827 0Z"
-            fill="#F0145A" />
-        </svg>
-        <h2 class="header__logo-serv">services</h2> -->
       </div>
       <nav class="header__menu">
-        <button class="header__menu-btn">
+        <button class="header__menu-btn" type="button" aria-label="Open menu" aria-expanded="false"
+          aria-controls="site-menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
             <path d="M7 10.5H25" stroke="white" stroke-width="2" />
             <path d="M7 16.5H25" stroke="white" stroke-width="2" />
             <path d="M7 22.5H25" stroke="white" stroke-width="2" />
           </svg>
         </button>
-        <ul class="header__menu-list">
-          <button class="header__menu-close">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M7 7L25 25" stroke="#EC6F5D" stroke-width="2" />
-              <path d="M25 7L7 25" stroke="#EC6F5D" stroke-width="2" />
-            </svg>
-          </button>
+        <ul class="header__menu-list" id="site-menu">
+          <li class="header__menu-close-item">
+            <button class="header__menu-close" type="button" aria-label="Close menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M7 7L25 25" stroke="#EC6F5D" stroke-width="2" />
+                <path d="M25 7L7 25" stroke="#EC6F5D" stroke-width="2" />
+              </svg>
+            </button>
+          </li>
           <li class="header__menu-item"><a class="menu-link" href="./about.html">about us</a></li>
           <li class="header__menu-item"><a class="menu-link" href="./services.html">services</a></li>
           <li class="header__menu-item"><a class="menu-link" href="./team.html">team</a></li>
@@ -114,7 +111,7 @@
       <img src="./image/home-symbol.svg" alt="">
     </div>
     <h1 class="hero__title">you legal solutions provider</h1>
-    <button class="hero__btn">
+    <button class="hero__btn" type="button" aria-label="Scroll down">
       <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
         <g clip-path="url(#clip0_22728_12366)">
           <circle opacity="0.5" cx="21" cy="21" r="20" stroke="white" stroke-width="2" />
@@ -408,7 +405,7 @@
     <div class="team__desc">
       <div class="team__desc-wrapper">
         <h3 class="team__desc-title">
-          <a href="/team.html" class="team__desc-link">
+          <a href="./team.html" class="team__desc-link">
             <span>team</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
               <path d="M3.5 2L8 6.5L3.5 11" stroke="#24A3FF" stroke-width="2" />
@@ -422,23 +419,23 @@
       <h4 class="team__desc-name">Alexander Alexandrovsky</h4>
       <p class="team__desc-position">Managing partner</p>
     </div>
-    <div class="team__slider" aria-label="Слайдер — оберіть участника">
+    <div class="team__slider" aria-label="Slider-Team members">
       <li>
-        <button class="team__slider-dot team__slider-dot--active" aria-label="Слайд 1" aria-current="true">
+        <button class="team__slider-dot team__slider-dot--active" aria-label="Slide 1" aria-current="true">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <circle cx="8.5" cy="8" r="8" fill="#24A3FF" />
           </svg>
         </button>
       </li>
       <li>
-        <button class="team__slider-dot" aria-label="Слайд 2">
+        <button class="team__slider-dot" aria-label="Slide 2">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <circle opacity="0.2" cx="8.5" cy="8" r="8" fill="#24A3FF" />
           </svg>
         </button>
       </li>
       <li>
-        <button class="team__slider-dot" aria-label="Слайд 3">
+        <button class="team__slider-dot" aria-label="Slide 3">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
             <circle opacity="0.2" cx="8.5" cy="8" r="8" fill="#24A3FF" />
           </svg>
@@ -491,7 +488,7 @@
   <section class="publications">
     <div class="publications__wrapper">
       <h3 class="publications__title">
-        <a href="/publications.html" class="publications__link">
+        <a href="./publications.html" class="publications__link">
           <span>Publications</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
             <path d="M3.5 2L8 6.5L3.5 11" stroke="#24A3FF" stroke-width="2" />
@@ -506,7 +503,7 @@
       <article class="pub__list-item">
         <img class="pub__list-img" src="./image/publ-1.png" alt="Publication associate">
         <div class="pub__list-wrapper">
-          <a class="pub__list-link" href="/publications.html">Equity associate</a>
+          <a class="pub__list-link" href="./publications.html">Equity associate</a>
           <p class="pub__list-date">April 22</p>
           <span class="pub__list-separator"></span>
           <p class="pub__list-text">I'm a jun on projects. I am a co-owner of a law firm. How it happened. Before
@@ -517,7 +514,7 @@
       <article class="pub__list-item">
         <img class="pub__list-img" src="./image/publ-2.png" alt="Publication Penalty for the Good Corporation">
         <div class="pub__list-wrapper">
-          <a class="pub__list-link" href="/publications.html">Penalty for the Good Corporation: what will happen to
+          <a class="pub__list-link" href="./publications.html">Penalty for the Good Corporation: what will happen to
             Google
             and others for violating the GDPR</a>
           <p class="pub__list-date">September 29</p>
@@ -529,7 +526,7 @@
       <article class="pub__list-item">
         <img class="pub__list-img" src="./image/publ-3.png" alt="Publication Millennial Testament">
         <div class="pub__list-wrapper">
-          <a class="pub__list-link" href="/publications.html">Millennial Testament</a>
+          <a class="pub__list-link" href="./publications.html">Millennial Testament</a>
           <p class="pub__list-date">August 19</p>
           <span class="pub__list-separator"></span>
           <p class="pub__list-text">What and how modern vloggers, opinion leaders and crypto-millionaires will inherit A
@@ -559,7 +556,7 @@
             </clippath>
           </defs>
         </svg>
-        <a class="footer__phone" href="tel:0800 211 927">0800 211 927</a>
+        <a class="footer__phone" href="tel:0800211927">0800 211 927</a>
         <a class="footer__email" href="mailto:contact@forstudy.space">contact@forstudy.space</a>
       </div>
     </div>

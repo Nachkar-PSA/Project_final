@@ -13,7 +13,6 @@
   margin: 0;
   border: 0;
   overflow-y: auto;
-  font-family: variables.$font-main;
   position: fixed;
   inset: 0;
 
@@ -36,7 +35,6 @@
     font-size: typography.$font-size-30;
     font-weight: typography.$font-weight-bold;
     line-height: typography.$line-height-37;
-    text-wrap: wrap;
     background: colors.$gradient-red-text;
     background-clip: text;
     -webkit-background-clip: text;
@@ -80,6 +78,23 @@
     &:focus-visible {
       outline: 2px solid colors.$regular-active;
     }
+
+    &:user-invalid {
+      border-color: colors.$error-color;
+      color: colors.$error-color;
+
+      &:placeholder {
+        color: colors.$error-color;
+      }
+    }
+
+    &:disabled {
+      background: colors.$gray-bg-alt;
+      border-color: colors.$gray-bg-alt;
+      color: colors.$gray-text;
+      opacity: 1;
+      cursor: not-allowed;
+    }
   }
 
   &-message {
@@ -98,18 +113,38 @@
   }
 
   &-submit {
+    @include mixins.button-primary;
     width: 100%;
-    padding: 18px 30px;
-    border: 0;
-    border-radius: typography.$border-radius-12;
-    box-shadow: 0 0 20px rgba(colors.$regular-active, 0.5);
-    background: colors.$regular-active;
-    color: colors.$main-white;
-    font-family: inherit;
-    font-size: typography.$font-size-16;
-    font-weight: typography.$font-weight-bold;
-    line-height: typography.$line-height-20;
-    cursor: pointer;
+    position: relative;
+    min-height: 56px;
+
+    &.is-loading:disabled,
+    &.is-sent:disabled {
+      background: colors.$gray-bg-alt;
+      box-shadow: none;
+      cursor: default;
+    }
+
+    &.is-loading:disabled {
+      color: transparent;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 32px;
+        height: 32px;
+        border: 4px solid colors.$regular-active;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: contact-spinner 0.8s linear infinite;
+      }
+    }
+
+    &.is-sent:disabled {
+      color: colors.$main-regular;
+    }
   }
 }
 
@@ -133,4 +168,20 @@
 html:has(.contact__popup[open]),
 body:has(.contact__popup[open]) {
   overflow: hidden;
+}
+
+.contact__popup-form .iti {
+  width: 100%;
+  min-width: 0;
+}
+
+.contact__popup-input[aria-invalid="true"] {
+  border-color: colors.$error-color;
+  color: colors.$error-color;
+}
+
+@keyframes contact-spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -23,7 +23,6 @@
   color: colors.$main-white;
   font-weight: typography.$font-weight-bold;
   font-size: typography.$font-size-12;
-  font-family: variables.$font-main;
   z-index: 3;
 
   &.active {
@@ -46,14 +45,12 @@
 .header__address {
   display: none;
   color: colors.$gray-text;
-  font-family: variables.$font-main;
   font-size: typography.$font-size-16;
 }
 .header__phone {
   color: colors.$main-white;
   font-weight: typography.$font-weight-bold;
   font-size: typography.$font-size-16;
-  font-family: variables.$font-main;
 }
 .light-theme .header__phone,
 .light-theme .header__facebook {
@@ -82,7 +79,6 @@
     color: colors.$main-white;
     font-weight: typography.$font-weight-regular;
     font-size: typography.$font-size-20;
-    font-family: variables.$font-main;
     z-index: 3;
   }
 }
@@ -135,7 +131,6 @@
     color: colors.$main-white;
     font-weight: typography.$font-weight-bold;
     font-size: typography.$font-size-16;
-    font-family: variables.$font-main;
     background: colors.$gray-bg;
     border-radius: 12px;
     padding: 7px;
@@ -147,19 +142,23 @@
   a {
     display: block;
     width: 100%;
+    color: colors.$regular-active;
 
     &:hover {
       color: colors.$regular-active-hover;
     }
   }
-  &-close {
+
+  &-close-item {
     position: absolute;
     top: 12px;
     right: 12px;
+    z-index: 1001;
+  }
+  &-close {
     color: colors.$accent-color;
     background: transparent;
     cursor: pointer;
-    z-index: 1001;
   }
   &--open {
     .header__menu-list {
@@ -247,7 +246,7 @@
       display: none;
     }
     &-btn,
-    &-close {
+    &-close-item {
       display: none;
     }
     &-list {

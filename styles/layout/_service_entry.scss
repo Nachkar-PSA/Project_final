@@ -7,7 +7,6 @@
   padding: 30px 30px 60px;
   background: colors.$gradient-supersoft;
   border-radius: 0 0 12px 12px;
-  font-family: variables.$font-main;
 
   &-card {
     @include mixins.flex($jc: flex-start, $ai: center, $fd: column);
@@ -38,18 +37,8 @@
   }
 
   &-btn {
+    @include mixins.button-primary;
     margin-top: 28px;
-    padding: 18px 30px;
-    border: 0;
-    border-radius: typography.$border-radius-12;
-    background: colors.$regular-active;
-    box-shadow: 0 0 20px rgba(colors.$regular-active, 0.5);
-    color: colors.$main-white;
-    font-family: inherit;
-    font-size: typography.$font-size-16;
-    font-weight: typography.$font-weight-bold;
-    line-height: typography.$line-height-20;
-    cursor: pointer;
   }
 
   &-details {

@@ -5,7 +5,6 @@
 
 .pub__entry {
   padding: 30px 30px 60px;
-  font-family: variables.$font-main;
 
   &-img {
     display: block;
@@ -21,7 +20,6 @@
     font-size: typography.$font-size-20;
     font-weight: typography.$font-weight-bold;
     line-height: typography.$line-height-24;
-    text-wrap: wrap;
   }
 
   &-date {
@@ -59,7 +57,6 @@
     font-weight: typography.$font-weight-bold;
     line-height: typography.$line-height-37;
     background: colors.$gradient-red-text;
-    text-wrap: wrap;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -75,7 +72,6 @@
     font-size: typography.$font-size-16;
     font-weight: typography.$font-weight-bold;
     line-height: typography.$line-height-20;
-    text-wrap: wrap;
 
     &--main {
       color: colors.$main-regular;
@@ -85,7 +81,6 @@
   &-list {
     margin: 0;
     padding-left: 30px;
-    list-style: decimal;
     color: colors.$main-black;
     font-size: typography.$font-size-18;
     line-height: typography.$line-height-26;
