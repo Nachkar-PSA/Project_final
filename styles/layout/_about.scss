@@ -1,0 +1,176 @@
+@use "../abstracts/mixins";
+@use "../base/colors";
+@use "../abstracts/variables";
+@use "../base/typography";
+
+.about {
+  &__spacer {
+    height: 30px;
+  }
+
+  &__intro {
+    padding: 0 30px;
+    @include mixins.flex($ai: flex-start, $fd: column, $g: 30px);
+  }
+
+  &__intro-text {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: typography.$font-size-30;
+    font-weight: typography.$font-weight-bold;
+    line-height: typography.$line-height-37;
+    background: colors.$gradient-red-text;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-wrap: wrap;
+  }
+
+  &__text {
+    font-size: typography.$font-size-19;
+    line-height: typography.$line-height-30;
+    color: colors.$main-black;
+
+    p {
+      text-wrap: wrap;
+    }
+
+    p + p {
+      margin-top: 20px;
+    }
+  }
+
+  &__intro-text > .about__text {
+    margin-top: 28px;
+  }
+
+  &__advantages {
+    width: 100%;
+    border-left: 4px solid colors.$gray-separator;
+    padding-left: 30px;
+    @include mixins.flex($ai: flex-start, $fd: column, $g: 40px);
+
+    &-item {
+      width: 100%;
+
+      p {
+        margin-top: 10px;
+        font-size: typography.$font-size-16;
+        line-height: typography.$line-height-20;
+        color: colors.$main-regular;
+        text-wrap: wrap;
+      }
+    }
+
+    &-heading {
+      @include mixins.flex($jc: flex-start, $ai: center, $g: 8px);
+    }
+
+    &-number {
+      font-size: typography.$font-size-36;
+      font-weight: typography.$font-weight-bold;
+      line-height: normal;
+      background: colors.$gradient-red-text;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__photo {
+    position: relative;
+
+    &-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    &-label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: typography.$font-size-36;
+      font-weight: typography.$font-weight-bold;
+      line-height: normal;
+      letter-spacing: 13px;
+      text-indent: 13px;
+      text-transform: uppercase;
+      color: colors.$main-white;
+      opacity: 0.8;
+      text-shadow: 0 15px 30px rgba(40, 40, 86, 0.8);
+    }
+  }
+
+  &__more {
+    padding: 0 30px;
+    @include mixins.flex($ai: flex-start, $fd: column, $g: 30px);
+  }
+
+  &__achievements-spacer {
+    height: 60px;
+  }
+
+  &__achievements {
+    padding: 30px 60px;
+    background: colors.$gray-bg;
+
+    &-title {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: typography.$font-size-14;
+      font-weight: typography.$font-weight-bold;
+      line-height: typography.$line-height-17;
+      letter-spacing: typography.$letter-spacing-1;
+      text-transform: uppercase;
+      color: colors.$main-regular;
+    }
+
+    &-item {
+      @include mixins.flex($jc: center, $ai: center);
+      height: 90px;
+      background: colors.$main-white;
+      border-radius: typography.$border-radius-12;
+
+      &[hidden] {
+        display: none;
+      }
+
+      img {
+        display: block;
+        width: auto;
+        height: 40px;
+        max-width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-pagination {
+      @include mixins.flex($jc: center, $ai: center, $g: 15px);
+      margin-top: 30px;
+    }
+
+    &-dot {
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: colors.$regular-active;
+      opacity: 0.2;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}

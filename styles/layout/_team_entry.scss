@@ -1,0 +1,163 @@
+@use "../base/colors";
+@use "../base/typography";
+@use "../abstracts/mixins";
+
+.team__entry {
+  padding: 0 30px;
+
+  &-img {
+    display: block;
+    width: 100%;
+    height: 375px;
+    object-fit: cover;
+    border-radius: typography.$border-radius-12;
+  }
+
+  &-info {
+    margin-top: 30px;
+  }
+
+  &-name {
+    font-size: typography.$font-size-38;
+    font-weight: typography.$font-weight-bold;
+    line-height: typography.$line-height-46;
+    background: colors.$gradient-red-text;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-wrap: wrap;
+  }
+
+  &-contacts {
+    @include mixins.flex($ai: flex-start, $fd: column, $g: 10px);
+    margin-top: 15px;
+  }
+
+  &-position {
+    color: colors.$gray-text;
+    font-size: typography.$font-size-14;
+    line-height: typography.$line-height-22;
+  }
+
+  &-link {
+    color: colors.$regular-active;
+    font-size: typography.$font-size-16;
+    line-height: typography.$line-height-20;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: colors.$accent-color;
+    }
+  }
+
+  &-content {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 4px solid colors.$gray-separator;
+    color: colors.$main-black;
+
+    p {
+      font-size: typography.$font-size-16;
+      line-height: typography.$line-height-26;
+      text-wrap: wrap;
+    }
+
+    p + p {
+      margin-top: 20px;
+    }
+  }
+
+  &-subtitle {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: colors.$main-regular;
+    font-size: typography.$font-size-14;
+    font-weight: typography.$font-weight-bold;
+    line-height: typography.$line-height-17;
+    letter-spacing: typography.$letter-spacing-1;
+    text-transform: uppercase;
+  }
+
+  &-spacer {
+    height: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .team__entry {
+    padding: 0 60px;
+    @include mixins.grid($columns: 300px minmax(0, 1fr), $gap: 30px);
+    align-items: center;
+
+    &-info {
+      margin-top: 0;
+    }
+
+    &-content {
+      grid-column: 1 / -1;
+      margin-top: 0;
+    }
+
+    &-spacer {
+      height: 60px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .team__entry {
+    gap: 30px 60px;
+    align-items: start;
+
+    &-img {
+      grid-column: 1;
+      grid-row: 1 / 3;
+    }
+
+    &-info {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &-content {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .team__entry {
+    padding-inline: 180px;
+    grid-template-columns: 400px minmax(0, 1fr);
+
+    &-img {
+      height: 500px;
+    }
+
+    &-contacts {
+      @include mixins.flex($jc: flex-start, $ai: center, $fd: row, $g: 10px);
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: colors.$gray-separator;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .team__entry {
+    padding-inline: 280px;
+  }
+}

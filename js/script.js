@@ -128,3 +128,20 @@ document.querySelectorAll(".contact__popup-form").forEach((form) => {
     }, 1000);
   });
 });
+
+const achievementCards = document.querySelectorAll(".about__achievements-item");
+const achievementDots = document.querySelectorAll(".about__achievements-dot");
+
+achievementDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    achievementCards.forEach((card, cardIndex) => {
+      card.hidden = cardIndex !== index;
+    });
+
+    achievementDots.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === index;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  });
+});
