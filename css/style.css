@@ -1419,6 +1419,15 @@ body {
     position: static;
     margin-top: 30px;
   }
+  .footer--about .footer__wrapper {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-inline: auto;
+  }
+  .footer--about .footer__rights {
+    position: static;
+    margin-top: 30px;
+  }
 }
 @media (min-width: 1024px) {
   .footer--contacts .footer__rights {
@@ -2356,4 +2365,46 @@ body:has(.contact__popup[open]) {
 }
 .about__achievements-dot.active {
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .about__intro {
+    padding: 0 60px;
+    flex-direction: row;
+  }
+  .about__more {
+    padding: 0 60px;
+  }
+  .about__achievements-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 40px;
+  }
+  .about__achievements-item[hidden] {
+    display: flex;
+  }
+}
+@media (min-width: 1024px) {
+  .about__more {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px;
+    align-items: start;
+  }
+}
+@media (min-width: 1440px) {
+  .about__more {
+    padding: 0 180px;
+  }
+  .about__intro {
+    padding: 0 180px;
+  }
+}
+@media (min-width: 1920px) {
+  .about__more {
+    padding: 0 280px;
+  }
+  .about__intro {
+    padding: 0 280px;
+  }
 }/*# sourceMappingURL=style.css.map */
